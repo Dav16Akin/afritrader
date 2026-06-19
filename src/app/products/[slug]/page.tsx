@@ -38,9 +38,10 @@ export default function ProductPage({ params }: PageProps) {
     : null;
 
   const handleAddToCart = () => {
+    const timestamp = crypto.randomUUID();
     for (let i = 0; i < qty; i++) {
       addItem({
-        id: `dummy-${product.id}-${Date.now()}-${i}`,
+        id: `dummy-${product.id}-${timestamp}-${i}`,
         productId: product.id,
         name: product.name,
         price: product.price,

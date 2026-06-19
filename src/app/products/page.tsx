@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, SlidersHorizontal, Star, Heart, ArrowRight, X, Check } from 'lucide-react';
+import { Search, SlidersHorizontal, Star, Heart, X, Check } from 'lucide-react';
 import { DUMMY_PRODUCTS, DUMMY_CATEGORIES, type DummyProduct } from '@/lib/dummy-data';
 import { useCartStore } from '@/lib/stores/cart-store';
 import { useUIStore } from '@/lib/stores/ui-store';
@@ -40,7 +40,7 @@ function ProductCard({ product }: { product: DummyProduct }) {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem({ id: `dummy-${product.id}-${Date.now()}`, productId: product.id, name: product.name, price: product.price, quantity: 1, image: product.image });
+    addItem({ id: `dummy-${product.id}-${crypto.randomUUID()}`, productId: product.id, name: product.name, price: product.price, quantity: 1, image: product.image });
     addToast(`${product.name} added to cart`, 'success');
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);

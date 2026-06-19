@@ -20,7 +20,7 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
     e.stopPropagation();
 
     addItem({
-      id: `dummy-${product.id}-${Date.now()}`,
+      id: `dummy-${product.id}-${crypto.randomUUID()}`,
       productId: product.id,
       name: product.name,
       price: product.price,

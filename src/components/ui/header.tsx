@@ -6,8 +6,8 @@ import { useAuthStore } from '@/lib/stores/auth-store';
 import { useUIStore } from '@/lib/stores/ui-store';
 import { Button } from './button';
 import {
-  ShoppingCart, Menu, X, User, Search, Phone, MapPin,
-  ChevronDown, Globe
+  ShoppingCart, Menu, X, User, Search,
+  ChevronDown, Globe, MapPin
 } from 'lucide-react';
 import { useState } from 'react';
 

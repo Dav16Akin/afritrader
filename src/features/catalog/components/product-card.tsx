@@ -31,7 +31,7 @@ export function ProductCard({ product, priceTier = 'consumer' }: ProductCardProp
     const previousItems = useCartStore.getState().items;
 
     addItem({
-      id: `optimistic-${product.id}-${Date.now()}`,
+      id: `optimistic-${product.id}-${crypto.randomUUID()}`,
       productId: product.id,
       name: product.name,
       price: product.price,
